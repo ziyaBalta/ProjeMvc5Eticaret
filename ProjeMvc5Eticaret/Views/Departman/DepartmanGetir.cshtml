@@ -1,0 +1,16 @@
+﻿@model ProjeMvc5Eticaret.Models.Siniflar.Departman
+@{
+    ViewBag.Title = "DepartmanGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("DepartmanGuncelle", "Departman"))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.DepartmanID)
+        @Html.LabelFor(x => x.DepartmanAdi)
+        @Html.TextBoxFor(x => x.DepartmanAdi, new { @class = "form-control" })
+    </div>
+    <br/>
+    <button class="btn btn-info">Kaydet</button>
+}

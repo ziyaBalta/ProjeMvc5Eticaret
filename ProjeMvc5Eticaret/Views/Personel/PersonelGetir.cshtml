@@ -1,0 +1,28 @@
+﻿@model ProjeMvc5Eticaret.Models.Siniflar.Personel
+
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+@using (Html.BeginForm("PersonelGetir", "PersonelGuncelle", FormMethod.Post))
+
+{
+    @Html.LabelFor(x => x.PersonelAdi)
+    @Html.TextBoxFor(x => x.PersonelAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersaonelSoyad)
+    @Html.TextBoxFor(x => x.PersaonelSoyad, new { @class = "form-control" })
+    <br/>
+    @Html.LabelFor(x => x.PersonelGorsel)
+    @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Departman)
+    @Html.TextBoxFor(x => x.Departman.DepartmanAdi, new { @class = "form-control" })
+
+    <br/>
+    <button class="btn btn-info">Tamam</button>
+
+}

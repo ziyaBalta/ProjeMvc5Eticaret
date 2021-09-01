@@ -1,0 +1,21 @@
+﻿@model ProjeMvc5Eticaret.Models.Siniflar.Kategori
+
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br/>
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x=>x.KategoriID)
+        @Html.LabelFor(x => x.KategoriAdi)
+        @Html.TextBoxFor(x => x.KategoriAdi, new { @class = "form-control" })
+
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+}
+
+

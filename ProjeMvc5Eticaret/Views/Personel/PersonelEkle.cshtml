@@ -1,0 +1,26 @@
+﻿@model ProjeMvc5Eticaret.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <br />
+    @Html.HiddenFor(x => x.PersonelID)
+    @Html.LabelFor(x => x.PersonelAdi)
+    @Html.TextBoxFor(x => x.PersonelAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersaonelSoyad)
+    @Html.TextBoxFor(x => x.PersaonelSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersonelGorsel)
+    @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Departman)
+    @Html.DropDownListFor(x => x.DepartmanID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Ekle</button>
+
+</form>

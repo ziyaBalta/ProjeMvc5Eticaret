@@ -1,0 +1,26 @@
+﻿@model ProjeMvc5Eticaret.Models.Siniflar.Kategori
+
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+
+<br />
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.KategoriAdi)
+    @Html.TextBoxFor(x => x.KategoriAdi, new { @class = "form-control" })
+
+</form>
+<button class="btn-info" id="btn1">Kaydet</button>
+<script>
+    $('#btn1').click(function () {
+        swal("Good job!", "You clicked the button!", "success");
+    });
+</script>
+

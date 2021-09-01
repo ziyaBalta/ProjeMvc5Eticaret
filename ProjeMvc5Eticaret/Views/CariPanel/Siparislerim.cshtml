@@ -1,0 +1,24 @@
+﻿@using ProjeMvc5Eticaret.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "Siparislerim";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+<table class="table table-bordered">
+
+       <tr>
+           <th>Ürün Adı</th>
+           <th>Fiyat</th>
+           <th>Tarih</th>
+       </tr>
+
+    @foreach (var x in Model)
+    {
+    <tr>
+        <td>@x.Urun.UrunAdi</td>
+        <td>@x.Fiyat</td>    
+        <td>@Convert.ToDateTime(x.Tarih).ToString("dd/mm/yyyy")</td>    
+    </tr>
+    }
+</table>

@@ -1,0 +1,25 @@
+﻿@model ProjeMvc5Eticaret.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>CariGetir</h2>
+
+@using (Html.BeginForm("CariGuncelle", "Cari"))
+{
+    @Html.LabelFor(x => x.CariAdi)
+    @Html.TextBoxFor(x => x.CariAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariSoyadi)
+    @Html.TextBoxFor(x => x.CariSoyadi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariSehir)
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariMail)
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+
+    <br />
+}
+

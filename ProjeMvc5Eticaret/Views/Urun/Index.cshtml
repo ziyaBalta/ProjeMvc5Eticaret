@@ -1,0 +1,45 @@
+﻿@using ProjeMvc5Eticaret.Models.Siniflar
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Urun>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ÜrünAdı</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Alıs Fiyatı</th>
+        <th>Satış Fiyatı</th>
+        <th>Kategori</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.UrunAdi</td>
+            <td>@x.Marka</td>
+            <td>@x.Stok</td>
+            <td>@x.AlisFiyati ₺</td>
+            <td>@x.SatisFiyati ₺</td>
+            <td>@x.Kategori.KategoriAdi</td>
+            <td><a href="/Urun/UrunSil/@x.UrunID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Urun/UrunGetir/@x.UrunID" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+
+
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new {sayfa}))
+<td><a href="/Urun/YeniUrun/" class="btn btn-primary">Ürün Ekle</a></td>
+
+

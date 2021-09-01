@@ -1,0 +1,39 @@
+﻿@model ProjeMvc5Eticaret.Models.Siniflar.Urun
+
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br/>
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.UrunID)
+    @Html.LabelFor(x => x.UrunAdi)
+    @Html.TextBoxFor(x => x.UrunAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Marka)
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Stok)
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.AlisFiyati)
+    @Html.TextBoxFor(x => x.AlisFiyati, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.SatisFiyati)
+    @Html.TextBoxFor(x => x.SatisFiyati, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Durum)
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Kategori)
+    @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunGorsel)
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+</div>
+<button  class="btn btn-warning"> Kaydet</button>
+}
+

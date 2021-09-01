@@ -1,0 +1,36 @@
+﻿@using ProjeMvc5Eticaret.Models.Siniflar
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>PersonelID</th>
+        <th>PersonelAdı</th>
+        <th>PersonelSoyadı</th>
+        <th>PersonelGörsel</th>
+        <th>PersonelDepartman</th>
+        <th>Güncelle</th>
+        <th>Satışlar</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.PersonelID</td>
+            <td>@x.PersonelAdi</td>
+            <td>@x.PersaonelSoyad</td>
+            <td>
+                <img src="@x.PersonelGorsel" style="width:100px; height:100px;" />
+            </td>
+            <td>@x.Departman.DepartmanAdi</td>
+            <td><a href="/Personel/PersonelSil/@x.PersonelID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Personel/PersonelGetir/@x.PersonelID" class="btn btn-info">Güncelle</a></td>
+            <td><a href="/Departman/DepartmanDetay/@x.PersonelID" class="btn btn-success">Detaylar</a></td>
+        </tr>
+    }
+</table>
+
+<td><a href="/Departman/DepartmanEkle/" class="btn btn-success">Personel  Ekle</a></td>
